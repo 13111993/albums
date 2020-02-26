@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="EssaiJPA" transaction-type="JTA">
+		<description>
+			Persistence unit for this project
+		</description>
+		<jta-data-source>tamanDS</jta-data-source>
+		<class>beans.Album</class>
+		<class>beans.Utilisateur</class>
+		<class>beans.Image</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="openjpa.jdbc.Schema" value="app"/>
+			<property name='openjpa.jdbc.SynchronizeMappings' value='buildSchema(ForeignKeys=true)' />
+		</properties>
+	</persistence-unit>
+
+</persistence>
